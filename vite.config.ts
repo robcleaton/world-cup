@@ -5,6 +5,9 @@ import path from 'path'
 
 export default defineConfig({
   base: '/world-cup/',
+  build: {
+    outDir: 'docs',
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

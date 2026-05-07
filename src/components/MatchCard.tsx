@@ -20,7 +20,7 @@ function isKnownTeam(code: string) {
   return Boolean(TEAMS[code])
 }
 
-function TeamName({ code, known, align }: { code: string; known: boolean; align?: 'left' | 'right' }) {
+function TeamName({ code, known }: { code: string; known: boolean; align?: 'left' | 'right' }) {
   const name = TEAMS[code]?.name ?? code
   return (
     <span style={{
