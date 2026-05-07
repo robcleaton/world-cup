@@ -103,7 +103,7 @@ export function Header({ selectedTeam, onPickTeam }: Props) {
       >
         {selectedTeam ? (
           <>
-            <ShirtIcon size={18} fill={textOnColor(selectedTeam.colors[0])} />
+            <ShirtIcon size={24} fill={textOnColor(selectedTeam.colors[0])} />
             {/* Mini flag badge */}
             <div style={{
               width: 28,
@@ -133,7 +133,7 @@ export function Header({ selectedTeam, onPickTeam }: Props) {
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
             }}>
-              {selectedTeam.name}
+              {selectedTeam.code}
             </span>
           </>
         ) : (
