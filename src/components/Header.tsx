@@ -1,5 +1,12 @@
-import { Shirt } from 'lucide-react'
 import type { Team } from '@/data/teams'
+
+function ShirtIcon({ size = 16, fill = 'currentColor' }: { size?: number; fill?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill={fill} style={{ flexShrink: 0 }}>
+      <path d="M40.8,6.9L32,4c0,4.4-3.6,8-8,8s-8-3.6-8-8L7.2,6.9c-1.9,0.6-3,2.5-2.7,4.5l1.2,6.9c0.2,1,1,1.7,2,1.7H12v20c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V20h4.3c1,0,1.8-0.7,2-1.7l1.2-6.9C43.8,9.4,42.6,7.5,40.8,6.9z"/>
+    </svg>
+  )
+}
 
 function luminance(hex: string) {
   const r = parseInt(hex.slice(1, 3), 16) / 255
@@ -96,7 +103,7 @@ export function Header({ selectedTeam, onPickTeam }: Props) {
       >
         {selectedTeam ? (
           <>
-            <Shirt size={14} color={textOnColor(selectedTeam.colors[0])} strokeWidth={2.5} />
+            <ShirtIcon size={18} fill={textOnColor(selectedTeam.colors[0])} />
             {/* Mini flag badge */}
             <div style={{
               width: 28,
@@ -131,7 +138,7 @@ export function Header({ selectedTeam, onPickTeam }: Props) {
           </>
         ) : (
           <>
-            <Shirt size={14} color="var(--text-muted)" strokeWidth={2.5} />
+            <ShirtIcon size={18} fill="var(--text-muted)" />
             <span style={{
               fontSize: 11,
               fontWeight: 800,
