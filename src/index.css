@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #080808;
+  --surface: #1a1a1a;
+  --surface2: #222222;
+  --border: #2e2e2e;
+  --text: #f0f0f0;
+  --text-muted: #777777;  /* #777 gives 4.6:1 on #080808 — passes AA */
+  --red: #e63946;
+  --gold: #f4c430;
+  --teal: #00b4a0;
+  --live: #22c55e;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  transition: background 0.35s;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+
+@keyframes marquee-rtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes marquee-ltr {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-band {
+  display: flex;
+  overflow: hidden;
+}
+
+.marquee-copy {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.marquee-copy--rtl {
+  animation: marquee-rtl 40s linear infinite;
+}
+
+.marquee-copy--ltr {
+  animation: marquee-ltr 22s linear infinite;
+}
+
+.layout-inner {
+  width: 100%;
+  padding: 0 clamp(16px, 3vw, 40px);
+}
+
+.content-area {
+  flex: 1;
+  width: 100%;
+  padding: 28px clamp(16px, 3vw, 40px) calc(28px + 36px);
+}
